@@ -89,57 +89,19 @@ export const router = async () => {
     console.log("Fetch error: ", error);
   }
 
-  // data = {
-  //   Authed: true,
-  //   User: {
-  //     Username: "asd",
-  //   },
-  // };
-  console.log(data);
+  // console.log(data);
 
   const view = new match.route.view(getParams(match), data);
   document.querySelector("#content").innerHTML = await view.getHtml();
   view.handleNav();
   view.handleBtn();
   await view.handleScript();
-
-  // if (match.route.path === "/") {
-  let s1 = document.createElement("script");
-  s1.id = "script1";
-  s1.type = "text/javascript";
-  s1.src = "/static/assets/js/jquery.isotope.min.js";
-
-  // let s2 = document.createElement("script");
-  // s2.id = "script2";
-  // s2.type = "text/javascript";
-  // s2.src = "/static/assets/js/slick.min.js";
-
-  let s3 = document.createElement("script");
-  s3.id = "script3";
-  s3.type = "text/javascript";
-  s3.src = "/static/assets/js/scripts.js?60aa3c5e653a6";
-
+  
   let s4 = document.createElement("script");
   s4.id = "script4";
   s4.type = "text/javascript";
   s4.src = "/static/assets/js/header-footer.js";
 
-  let s5 = document.createElement("script");
-  s5.id = "script5";
-  s5.type = "text/javascript";
-  s5.src = "/static/assets/js/sssweetalert2.all.min.js";
-
-  // document.getElementById("sign_in_box").after(s2);
-
-  // while (!document.querySelector("#script2")) {
-  //   await new Promise((r) => setTimeout(r, 1000));
-  // }
-
-  // setTimeout(() => {
-  // if (!document.getElementById("script5")) {
-  // document.getElementById("script2").after(s1, s3, s4, s5);
-  // }
-  // }, 500);
   document.getElementById("sign_in_box").after(s4);
-  // }
+
 };

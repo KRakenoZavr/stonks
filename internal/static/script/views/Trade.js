@@ -1,6 +1,4 @@
 import AbstractView from "./AbstractView.js";
-import { router } from "../router/index.js"
-import { fetchSavePost, fetchPost } from "../fetcher/fetcher.js" 
 
 export default class extends AbstractView {
     constructor(params, data) {
@@ -10,22 +8,7 @@ export default class extends AbstractView {
     }
 
     async getHtml() {
-
-        // <tr>
-				// 	<td>P2tsАоbZHRKNcoAi92</td>
-				// 	<td>
-				// 		<p><a href=\"https://utb.kz/custom/benzin-dlya-dvigatelei-s-iskrovym-zazhiganiem-marka-ai-92-2559/\" target=\"_blank\">Бензин для двигателей с искровым зажиганием, марка АИ-92</a></p>
-				// 		<p><strong>Брокер:</strong> БД65</p>
-				// 	</td>
-				// 	<td class=\"to_center\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Двойной встречный аукцион\">ДВА</td>
-				// 	<td>07.06.2021 09:00</td>
-				// 	<td>07.06.2021 11:00</td>
-				// 	<td class=\"no_wrap\">74 480.00</td>
-				// </tr>
-
-
         let generatePosts = ``
-
         for (let i in this.data) {
             if (i === "Posts") {
                 this.data[i].forEach((posts) => {

@@ -1,8 +1,4 @@
 export const fetchSavePost = async (newTrade) => {
-  // let category = [];
-  // document.querySelectorAll("input[type='checkbox']").forEach((el) => {
-  //   if (el.checked) category.push(el.value);
-  // });
   const resp = await fetch("/savePost", {
     method: "POST",
     headers: {
@@ -13,32 +9,6 @@ export const fetchSavePost = async (newTrade) => {
   });
   const check = await resp.json();
   if (check.Status) throw check;
-};
-
-export const fetchCommentAdd = async (el) => {
-  await fetch(`${location.pathname}/_method=POST`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      description: el.previousElementSibling.value,
-    }),
-  });
-};
-
-export const fetchCommentDelete = async (el) => {
-  await fetch(`${location.pathname}/_method=DELETE`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      id: el.classList[1],
-    }),
-  });
 };
 
 export const fetchPost = async (el, data) => {

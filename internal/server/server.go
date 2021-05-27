@@ -14,7 +14,6 @@ type Server struct {
 	router *mux.Router
 	store  store.Store
 	cache  *services.Cache
-	hub    *Hub
 }
 
 func NewServer(store store.Store) (s *Server) {
@@ -22,7 +21,6 @@ func NewServer(store store.Store) (s *Server) {
 		router: mux.NewRouter(),
 		store:  store,
 		cache:  services.NewCache(),
-		hub:    NewHub(store),
 	}
 
 	s.configureRouter()
@@ -32,7 +30,6 @@ func NewServer(store store.Store) (s *Server) {
 
 func (s *Server) Start(bindAddr string) error {
 	s.configureRouter()
-	// go s.hub.Run()
 
 	fmt.Printf("app is running on %s\n", bindAddr)
 
@@ -72,10 +69,6 @@ func (s *Server) configureRouter() {
 	s.router.HandleFunc("/savePost", s.SavePostHandler).Methods("POST")
 	s.router.HandleFunc("/rate", s.Rate).Methods("POST")
 	s.router.HandleFunc("/posts/{id}/_method=DELETE", s.DeleteCommentHandler).Methods("POST")
-
-	// s.router.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
-	// 	s.ServeWs(w, r)
-	// })
 
 	s.router.PathPrefix("/").Handler(http.FileServer(http.Dir("internal/")))
 }

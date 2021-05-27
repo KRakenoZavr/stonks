@@ -27,36 +27,6 @@ export default class {
   handleNav() {
     const qs = document.querySelector.bind(document);
 
-    // var minheight = 20;
-    // var maxheight = 100;
-    // var time = 1000;
-    // var timer = null;
-    // var toggled = false;
-
-    // var controller = document.getElementById("mmenu_toggle");
-    // var slider = qs(".mobile_nav");
-    // slider.style.height = minheight + "px"; //not so imp,just for my example
-    // controller.onclick = function () {
-    //   controller.classList.toggle('active')
-    //   clearInterval(timer);
-    //   var instanceheight = parseInt(slider.style.height); // Current height
-    //   var init = new Date().getTime(); //start time
-    //   var height = (toggled = !toggled) ? maxheight : minheight; //if toggled
-
-    //   var disp = height - parseInt(slider.style.height);
-    //   timer = setInterval(function () {
-    //     var instance = new Date().getTime() - init; //animating time
-    //     if (instance <= time) {
-    //       //0 -> time seconds
-    //       var pos = instanceheight + Math.floor((disp * instance) / time);
-    //       slider.style.height = pos + "px";
-    //     } else {
-    //       slider.style.height = height + "px"; //safety side ^^
-    //       clearInterval(timer);
-    //     }
-    //   }, 1);
-    // };
-
     const deleteAction = (e) => {
       if (!qs(".sign_in_center").contains(e.target)) {
         if (qs("#sign_in_box").style.display === "block") {
@@ -87,14 +57,6 @@ export default class {
       qs(".btn_box a").classList.add("handledBtn");
     }
 
-    // if (this.data.Authed) {
-    //   qs('.social-list.fright').innerHTML = `
-    //   <li><a>${this.data.User.Username}</a></li>
-    //   <li><a href="" data-link>Выйти</a></li>`
-    // }
-
-    // if (localStorage.getItem('gotUnread') === 'true')
-    //     document.getElementById('chat_container').parentElement.classList.add('unreadMsg')
     if (this.data.Authed) {
       if (qs(".soc_btn a[href='/sign_up']")) {
         document.querySelectorAll(".soc_btn").forEach((el) => el.remove());
@@ -147,29 +109,9 @@ export default class {
         });
       }
     }
-    // if (!document.getElementById('content').classList.contains('handled')) this.handleThis()
   }
 
-  handleThis() {
-    //     document.getElementById('content').classList.add('handled')
-    //     const toggle = document.querySelector(".toggle");
-    //     const menu = document.querySelector(".menu");
-    //     /* Toggle mobile menu */
-    //     const toggleMenu = () => {
-    //         if (menu.classList.contains("active")) {
-    //             menu.classList.remove("active");
-    //             toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
-    //         } else {
-    //             menu.classList.add("active");
-    //             toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
-    //         }
-    //     }
-    //     if (menu.classList.contains("active")) toggleMenu();
-    //     if (!this.toggler) {
-    //         toggle.addEventListener("click", toggleMenu);
-    //         this.toggler = true;
-    //     }
-  }
+  handleThis() {}
 
   handleBtn() {}
 

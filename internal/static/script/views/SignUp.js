@@ -12,7 +12,6 @@ export default class extends AbstractView {
   checkForm() {
     const qs = document.querySelector.bind(document);
     let passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
-      nickRegex = /^[A-Za-z0-9_-]{3,16}$/,
       mailRegex = /^\S+@\S+\.\S+$/;
     if (!qs("#email").value || !qs("#email").value.match(mailRegex)) {
       this.alerter.show("Пожалуйста, введите правильный email");
@@ -87,24 +86,6 @@ export default class extends AbstractView {
         e.preventDefault();
         if (!this.checkForm()) return false;
 
-				console.log({
-					Email: document.getElementById("email").value,
-					Password: document.getElementById("password").value,
-					Company_name: document.getElementById("company_name").value,
-					Company_director: document.getElementById("company_director").value,
-					Country_id: document.getElementById("country_id").value,
-					Region_id: document.getElementById("region_id").value,
-					District_id: document.getElementById("district_id").value,
-					Postal_code: document.getElementById("postal_code").value,
-					Address: document.getElementById("registration_address").value,
-					BIN: document.getElementById("BIN").value,
-					BIK: document.getElementById("bik").value,
-					IIK: document.getElementById("iik").value,
-					Bank_name: document.getElementById("bank_name").value,
-					Contact_name: document.getElementById("contact_name").value,
-					Contact_phone: document.getElementById("contact_phone").value,
-				});
-				
         try {
           await fetchSignUp();
           navigateTo("/");
@@ -114,65 +95,6 @@ export default class extends AbstractView {
           this.alerter.show(error.ErrorText);
         }
       });
-    // let step_id = 1;
-    // let post_data = new FormData();
-
-    // document
-    //   .getElementById("sign_up_btn")
-    //   .addEventListener("click", async (e) => {
-    //     e.preventDefault();
-
-    //     const sign_up_btn = this;
-    //     let is_correct = true;
-
-    //     document.querySelectorAll("input").forEach((el) => {
-    //       const field = el.getAttribute("id");
-    //       const value = el.value.trim();
-    //       const limit = parseInt(el.getAttribute("limit"));
-    //       limit = isNaN(limit) ? 3 : limit;
-    //       if (value.length >= limit) {
-    //         post_data.append(field, value);
-    //       } else {
-    //         is_correct = false;
-    //         const err_text = el.getAttribute("placeholder");
-    //         if (limit > 3) {
-    //           err_text += ` Мин. ${limit} символ`;
-    //         }
-    //         el.focus();
-    //         el.classList.add("err");
-    //         sign_up_btn.nextElementSibling.innerText = err_text;
-    //         setTimeout(() => {
-    //           sign_up_btn.nextElementSibling.innerText = "";
-    //         }, 2500);
-    //         return false;
-    //       }
-    //     });
-
-    //     is_correct =
-    //       document.querySelector("#password").value ===
-    //       document.querySelector("#password2").value;
-    //     if (!is_correct) {
-    //       sign_up_btn.nextElementSibling.innerText = "Пароли не совпадают";
-    //       setTimeout(() => {
-    //         sign_up_btn.nextElementSibling.innerText = "";
-    //       }, 2500);
-    //     }
-    //     if (is_correct) {
-    //       if (
-    //         !document.querySelector("region_id").value ||
-    //         !document.querySelector("district_id")
-    //       ) {
-    //         is_correct = false;
-    //         sign_up_btn.nextElementSibling.innerText = "Выберите область/район";
-    //         setTimeout(() => {
-    //           sign_up_btn.nextElementSibling.innerText = "";
-    //         }, 2500);
-    //       }
-    //     }
-    //     if (is_correct) {
-    //       post_data.append();
-    //     }
-    //   });
   }
 
   async getHtml() {

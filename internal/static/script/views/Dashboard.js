@@ -1,15 +1,14 @@
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
-    constructor(params, data) {
-        super(params);
-        this.data = data;
-        this.setTitle("АО «Универсальная торговая биржа «Астана»");
-    }
+  constructor(params, data) {
+    super(params);
+    this.data = data;
+    this.setTitle("АО «Универсальная торговая биржа «Астана»");
+  }
 
-    async getHtml() {
-
-        return `
+  async getHtml() {
+    return `
         <section class="fullwidthbanner-container">
         <div class="slider-container">
           <ul class="slider-pagi"></ul>
@@ -366,7 +365,7 @@ export default class extends AbstractView {
                 <div class="wpb_wrapper">
                   <div class="wpcf7 reg_form">
                     <div class="screen-reader-response"></div>
-                    <form action="/sign_up" method="post">
+                    <form>
                       <div class="row" style="margin-bottom: 10px">
                         <div class="col-md-6">
                           <input
@@ -405,9 +404,7 @@ export default class extends AbstractView {
                       </div>
                       <p>
                         <input
-                          type="submit"
                           value="Регистрация"
-                          class="btn reg_post"
                         />
                       </p>
                       <div
@@ -422,162 +419,5 @@ export default class extends AbstractView {
         </div>
       </section>
         `;
-    }
+  }
 }
-
-
-{/* <section class="wpb_row row-fluid section-padd bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="wpb_column column_container col-sm-12 col-md-9">
-        <div class="column-inner">
-          <div class="wpb_wrapper">
-            <div class="section-head">
-              <h2 class="section-title">Новости</h2>
-            </div>
-            <div class="empty_space_30 md-hidden sm-hidden">
-              <span class="empty_space_inner"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wpb_column column_container col-sm-12 col-md-3">
-        <div class="column-inner">
-          <div class="wpb_wrapper">
-            <div
-              class="wpb_text_column wpb_content_element text-right mobile-left"
-            >
-              <div class="wpb_wrapper">
-                <p>
-                  <a class="pagelink gray" href="/news">Все новости</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wpb_column column_container col-sm-12">
-        <div class="column-inner">
-          <div class="wpb_wrapper">
-            <div
-              class="news-slider posts-grid row"
-              data-show="3"
-              data-auto="true"
-            >
-              <div>
-                <article class="news-item content-area">
-                  <div class="inner-item radius-top">
-                    <div class="thumb-image">
-                      <a
-                        href="/post/tseny-na-neft-segodnya-slabo-rastut-posle-neodnoznachnyh-torgov-nakanune-785/"
-                      >
-                        <img
-                          src="static/assets/images/post_items/c5adc082ad0f203027f0c16acffe8ddc.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div class="inner-post radius-bottom">
-                      <div class="entry-meta">
-                        <span class="posted-on">
-                          <time class="entry-date"
-                            >9 желтоқсан, 2020</time
-                          >
-                        </span>
-                      </div>
-                      <h4 class="entry-title">
-                        <a
-                          href="/post/tseny-na-neft-segodnya-slabo-rastut-posle-neodnoznachnyh-torgov-nakanune-785/"
-                          >Цены на нефть сегодня слабо растут после
-                          неоднозначных торгов накануне</a
-                        >
-                      </h4>
-                      <a
-                        class="post-link"
-                        href="/post/tseny-na-neft-segodnya-slabo-rastut-posle-neodnoznachnyh-torgov-nakanune-785/"
-                        >Подробнее</a
-                      >
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <article class="news-item content-area">
-                  <div class="inner-item radius-top">
-                    <div class="thumb-image">
-                      <a
-                        href="/post/s-14-dekabrya-na-kase-nachnutsya-torgi-aktsiyami-chastnogo-zolotohranilisha-784/"
-                      >
-                        <img
-                          src="static/assets/images/post_items/8394fa94176821a6845baa8e736bf148.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div class="inner-post radius-bottom">
-                      <div class="entry-meta">
-                        <span class="posted-on">
-                          <time class="entry-date"
-                            >9 желтоқсан, 2020</time
-                          >
-                        </span>
-                      </div>
-                      <h4 class="entry-title">
-                        <a
-                          href="/post/s-14-dekabrya-na-kase-nachnutsya-torgi-aktsiyami-chastnogo-zolotohranilisha-784/"
-                          >С 14 декабря на KASE начнутся торги акциями
-                          частного золотохранилища...
-                        </a>
-                      </h4>
-                      <a
-                        class="post-link"
-                        href="/post/s-14-dekabrya-na-kase-nachnutsya-torgi-aktsiyami-chastnogo-zolotohranilisha-784/"
-                        >Подробнее</a
-                      >
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <article class="news-item content-area">
-                  <div class="inner-item radius-top">
-                    <div class="thumb-image">
-                      <a
-                        href="/post/dollar-zakryl-torgi-na-otmetke-420-tenge-783/"
-                      >
-                        <img
-                          src="static/assets/images/post_items/d6eace36ab7cbb37c9c61f98f45c1bcf.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div class="inner-post radius-bottom">
-                      <div class="entry-meta">
-                        <span class="posted-on">
-                          <time class="entry-date"
-                            >9 желтоқсан, 2020</time
-                          >
-                        </span>
-                      </div>
-                      <h4 class="entry-title">
-                        <a
-                          href="/post/dollar-zakryl-torgi-na-otmetke-420-tenge-783/"
-                          >Доллар закрыл торги на отметке 420 тенге</a
-                        >
-                      </h4>
-                      <a
-                        class="post-link"
-                        href="/post/dollar-zakryl-torgi-na-otmetke-420-tenge-783/"
-                        >Подробнее</a
-                      >
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> */}
