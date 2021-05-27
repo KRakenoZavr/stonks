@@ -5641,3 +5641,8 @@ div.line-chart .chart-legend li {
 .msgbox-area {
   font-size: 16px;
 }
+
+.title__center {
+  font-weight: bold;
+  text-align: center;
+}

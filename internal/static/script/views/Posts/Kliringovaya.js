@@ -446,8 +446,28 @@ export default class extends AbstractView {
                                       color: #052635;
                                       mso-fareast-language: RU;
                                     "
-                                    >Список обслуживаемых товарных бирж: АО
+                                    >Список обслуживаемых товарных бирж: <br>АО
                                     «Универсальная товарная биржа «Астана»<o:p
+                                    ></o:p
+                                  ></span>
+                                </p>
+                                <p
+                                  class="MsoNormal"
+                                  style="
+                                    margin-bottom: 0cm;
+                                    margin-bottom: 0.0001pt;
+                                    line-height: normal;
+                                  "
+                                >
+                                  <span
+                                    style="
+                                      font-size: 14pt;
+                                      font-family: 'Times New Roman', serif;
+                                      mso-fareast-font-family: 'Times New Roman';
+                                      color: #052635;
+                                      mso-fareast-language: RU;
+                                    "
+                                    >АО «Товарная Биржа «Green Climate Exchange»<o:p
                                     ></o:p
                                   ></span>
                                 </p>
